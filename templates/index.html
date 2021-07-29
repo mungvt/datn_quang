@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phạm Minh Đăng</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/goiham.js"></script>
+    <link rel="stylesheet" href="../static/css/mui.min.css">
+    <script src="../static/js/mui.min.js"></script>
+    <link rel="stylesheet" href="../static/css/reset.css">
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex flex-row align-items-center px-3 py-3 justify-content-between">
+            <div class="d-flex">
+                <h3 CLASS="fw-bold my-0">ĐỒ ÁN CHUYÊN NGÀNH</h3>
+            </div>
+            <div class="d-flex align-items-center flex-column">
+                <p CLASS="fw-bold text-secondary">Phạm Minh Đăng</p>
+                <p class="my-0 ">1844801040013</p>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center py-5" style="background-color: #D81B60">
+        <p class="h5 mb-4 text-light">ĐỀ TÀI</p>
+        <p class="fw-bold h5 text-center w-50 text-light">Khai phá các yếu tố ảnh hưởng đến vị trí công tác trong cơ quan của nhân viên bằng học máy</p>
+    </div>
+    <div class="container py-5">
+        <p class="text-center mb-4 fw-bold h5 text-dark">Sự tương quan giữa các yếu tố với vị trí công tác</p>
+        <div class="">
+            <table class="table table-bordered mb-3">
+                <thead>
+                <tr>
+                    <th scope="col">Stt</th>
+                    <th scope="col">Yếu tố</th>
+                    <th scope="col">Hệ số tương quan</th>
+                </tr>
+                </thead>
+                <tbody id="tqTable">
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex w-50 m-lg-auto flex-column">
+            <img src="../static/img/download.png" height="auto" width="100%" alt="Hệ số tương quan"/>
+            <p class="text-center">Biểu đồ tương quan của các đặc trưng</p>
+        </div>
+    </div>
+    <div class="container py-5">
+        <p class="text-center mb-4 fw-bold h5 text-dark">So sánh các phương pháp học máy</p>
+        <div class="">
+            <table class="table table-bordered mb-3">
+                <thead>
+                <tr>
+                    <th scope="col">Stt</th>
+                    <th scope="col">Mô hình</th>
+                    <th scope="col">Accuracy</th>
+                    <th scope="col">MSE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  >
+                    <th scope="row">1</th>
+                    <td>Rừng cây ngẫu nhiên</td>
+                    <td>0.9402</td>
+                    <td>0.0597</td>
+                </tr>
+                <tr class="fw-bold">
+                    <th scope="row">2</th>
+                    <td>Hồi quy Logistic</td>
+                    <td>0.9701</td>
+                    <td>0.0298</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>SVM</td>
+                    <td>0.8358</td>
+                    <td>0.1641</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container py-5">
+        <p class="text-center mb-4 fw-bold h5 text-dark">Dự đoán vị trí công tác</p>
+        <div class="row pb-5">
+            <div class="form-group col-md-3">
+                <label for="thoi_tiet">Thời tiết</label>
+                <input placeholder="Nhập giá trị thời tiết" type="text" class="form-control" id="thoi_tiet">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="csphat_olt">Công suất phát OLT *</label>
+                <input placeholder="Nhập giá trị công xuất phát OLT" type="text" class="form-control" id="csphat_olt">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="csthu_olt">Công suất thu OLT *</label>
+                <input placeholder="Nhập giá trị công suất thu OLT" type="text" class="form-control" id="csthu_olt">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="csphat_tbc">Công suất phát thiết bị đầu cuối *</label>
+                <input placeholder="Nhập giá trị công suất phát thiết bị đầu cuối" type="text" class="form-control" id="csphat_tbc">
+            </div>
+
+        </div>
+        <div class="row pb-5">
+            <div class="form-group col-md-3">
+                <label for="csthu_tbc">Công suất thu thiết bị đầu cuối *</label>
+                <input placeholder="Nhập giá trị công suất thu thiết bị đầu cuối" type="text" class="form-control" id="csthu_tbc">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sh_download">Suy hao hướng download *</label>
+                <input placeholder="Nhập giá trị suy hao hướng download" type="text" class="form-control" id="sh_download">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sh_upload">Suy hao hướng upload *</label>
+                <input placeholder="Nhập giá trị suy hao hướng upload" type="text" class="form-control" id="sh_upload">
+            </div>
+            <div class="form-group col-md-3">
+                 <label for="kc_tb">Khoảng cách thuê bao *</label>
+                <input placeholder="Nhập giá trị khoảng cách thuê bao" type="text" class="form-control" id="kc_tb">
+            </div>
+            <div class="form-group col-md-3">
+                  <label for="model" class="col-form-label">Lựa chọn môp hình *</label>
+                  <select id="model" class="form-control">
+                        <option value="" selected disabled>Chọn mô hình</option>
+                  </select>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center pb-5">
+            <button type="button" class="btn btn-primary mx-5" onclick="duDoan()">Dự đoán</button>
+            <button type="button" class="btn btn-secondary mx-5" onclick="loadLai()">Làm lại</button>
+        </div>
+        <div class="card" id="panelKetQua" style="display: none">
+            <div class="card-body">
+                <h5 class="card-title text-center">Kết quả</h5>
+                <p class="card-text text-center fw-bold h4" id="ketqua"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
